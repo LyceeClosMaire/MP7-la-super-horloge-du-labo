@@ -1,0 +1,1150 @@
+<root>
+<document schema='101' license='1,clos maire,4Y3DZH' title='' description='' target='PIC.16F.16F876' >
+	<config data='!0,3fff%0,3%2,1%3,1%6,1%7,1%9,1%b,1%8,1%4,303' clkspd='3276800' simspd='1' usewdt='0' constif='0' />
+	<plugins >
+		<dll_dbg_icd enabled='0' >
+			<data name='debug' value='1' />
+			<data name='userpins' value='0' />
+			<data name='speed' value='0' />
+			<data name='usev9' value='0' />
+			<data name='breaks' value='8' />
+			<data name='stacks' value='8' />
+			<data name='clkport' value='1' />
+			<data name='clkbit' value='6' />
+			<data name='dataport' value='1' />
+			<data name='databit' value='7' />
+			<data name='ghostype' value='0' />
+			<data name='monitor' value='1' />
+			<data name='ictloop' value='0' />
+			<data name='ictrate' value='20000' />
+			<data name='ictmask' value='0' />
+			<data name='anlpres' value='255' />
+			<data name='digmask1' value='-1' />
+			<data name='digmask2' value='-1' />
+		</dll_dbg_icd>
+		<dll_models enabled='1' />
+		<dll_upgrader enabled='1' />
+		<dll_webhelp enabled='1' />
+	</plugins>
+	<supplement use='0' head='' body='' />
+	<debug />
+	<components >
+		<settings autoimg='1' center='1' unitscale='0' fixedscale='0' fixedx='1' fixedy='1' fixedz='1' headcode='0' />
+		<definition guid='' vstate='40' vmin='0' vmaj='1' srcleaf='' visiblename='' description='' category='' catenable='1' author='' manuname='' manucode='' sysinfo='0' keywords='' dynamic='0' iconpath='' />
+		<component class_type='root' codename='panel' x='0' y='0' z='0' xsz='1' ysz='1' zsz='1' xang='0' yang='0' zang='0' xquat='0' yquat='0' zquat='0' wquat='1' visible='1' interactive='1' solid='1' layer='0' poslock='0' >
+			<resources />
+			<properties />
+			<values />
+			<events />
+			<apis />
+			<variables >
+				<variable public='0' >
+					<def class_type='variable' name='H' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='MODE' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='MODE_FONCTIONNEMENT' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='JR' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='BP_MODE' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='EEPROM_NB_JOURS' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='AFF9' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='CPT_T_CENT' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='AFF8' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='EEPROM_MOIS' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='BP_PLUS' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='AFF7' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='AFF6' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='AFF5' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='AFF4' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='CPT_T_U' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='AFF3' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='MOIS' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='AFF2' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='AFF1' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='SEC' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='BP_PLUSM' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='BP_MOINS' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='AFF10' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='MIN' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='BP_MOINSM' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='CPT_T_DIZ' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='BP_MODEM' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+				<variable public='0' >
+					<def class_type='variable' name='25SEC' type='u8' description='' isconst='0' isinit='0' usrinit='0' setinit='' />
+				</variable>
+			</variables>
+			<macros >
+				<macro >
+					<flowline name='INTERRUPT_TMR0' description='' >
+						<command class_type='calculation' title='Calcul' >
+							<exp exp='25SEC = 25SEC+1' />
+						</command>
+						<command class_type='decision' title='Condition' exp='25SEC=25' swap='0' >
+							<flowline >
+								<command class_type='output' title='front montant sur clock registres' mode='2' port='1048577' mask='16' exp='16' />
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='SEC = SEC + 1' />
+									<exp exp='25SEC = 0' />
+								</command>
+								<command class_type='decision' title='SECONDE' exp='SEC = 60' swap='0' >
+									<flowline >
+										<command class_type='output' title='reset registres' mode='2' port='1048577' mask='32' exp='0' />
+										<command class_type='output' title='pas de reset registres' mode='2' port='1048577' mask='32' exp='32' />
+										<command class_type='output' title='clock registres' mode='2' port='1048577' mask='16' exp='0' />
+										<command class_type='output' title='front montant sur clock registres' mode='2' port='1048577' mask='16' exp='16' />
+										<command class_type='calculation' title='Calcul' >
+											<exp exp='SEC = 0' />
+											<exp exp='MIN = MIN + 1' />
+										</command>
+										<command class_type='decision' title='MINUTE' exp='MIN = 60' swap='0' >
+											<flowline >
+												<command class_type='calculation' title='Calcul' >
+													<exp exp='MIN = 0' />
+													<exp exp='H = H + 1' />
+												</command>
+												<command class_type='decision' title='HEURE' exp='H = 24' swap='0' >
+													<flowline >
+														<command class_type='calculation' title='Calcul' >
+															<exp exp='H = 0' />
+															<exp exp='JR = JR + 1' />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 1 AND JR = 32)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 2' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 2 AND JR = 29)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 3' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 3 AND JR = 32)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 4' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 4 AND JR = 31)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 5' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 5 AND JR = 32)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 6' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 6 AND JR = 31)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 7' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 7 AND JR = 32)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 8' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 8 AND JR = 32)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 9' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 9 AND JR = 31)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 10' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 10 AND JR = 32)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 11' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 11 AND JR = 31)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 12' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+														<command class_type='decision' title='MOIS' exp='(MOIS = 12 AND JR = 32)' swap='0' >
+															<flowline >
+																<command class_type='calculation' title='Calcul' >
+																	<exp exp='MOIS = 1' />
+																	<exp exp='JR = 1' />
+																</command>
+															</flowline>
+															<flowline />
+														</command>
+													</flowline>
+													<flowline />
+												</command>
+											</flowline>
+											<flowline />
+										</command>
+									</flowline>
+									<flowline />
+								</command>
+							</flowline>
+							<flowline >
+								<command class_type='output' title='clock registres' mode='2' port='1048577' mask='16' exp='0' />
+							</flowline>
+						</command>
+					</flowline>
+				</macro>
+				<macro >
+					<flowline name='DONNEES_MOIS' description='' >
+						<command class_type='decision' title='JANVIER' exp='MOIS = 1' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = &apos;J&apos;' />
+									<exp exp='AFF8 = &apos;A&apos;' />
+									<exp exp='AFF9 = &apos;N&apos;' />
+									<exp exp='AFF10 = &apos;V&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='FEVRIER' exp='MOIS = 2' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = &apos;F&apos;' />
+									<exp exp='AFF8 = &apos;E&apos;' />
+									<exp exp='AFF9 = &apos;V&apos;' />
+									<exp exp='AFF10 = &apos;R&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='MARS' exp='MOIS = 3' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = &apos;M&apos;' />
+									<exp exp='AFF8 = &apos;A&apos;' />
+									<exp exp='AFF9 = &apos;R&apos;' />
+									<exp exp='AFF10 = &apos;S&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='AVRIL' exp='MOIS = 4' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = 0' />
+									<exp exp='AFF8 = &apos;A&apos;' />
+									<exp exp='AFF9 = &apos;V&apos;' />
+									<exp exp='AFF10 = &apos;R&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='MAI' exp='MOIS = 5' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = 0' />
+									<exp exp='AFF8 = &apos;M&apos;' />
+									<exp exp='AFF9 = &apos;A&apos;' />
+									<exp exp='AFF10 = &apos;I&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='JUIN' exp='MOIS = 6' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = &apos;J&apos;' />
+									<exp exp='AFF8 = &apos;U&apos;' />
+									<exp exp='AFF9 = &apos;I&apos;' />
+									<exp exp='AFF10 = &apos;N&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='JUILLET' exp='MOIS = 7' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = &apos;J&apos;' />
+									<exp exp='AFF8 = &apos;U&apos;' />
+									<exp exp='AFF9 = &apos;I&apos;' />
+									<exp exp='AFF10 = &apos;L&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='AOUT' exp='MOIS = 8' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = &apos;A&apos;' />
+									<exp exp='AFF8 = &apos;O&apos;' />
+									<exp exp='AFF9 = &apos;U&apos;' />
+									<exp exp='AFF10 = &apos;T&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='SEPTEMBRE' exp='MOIS = 9' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = &apos;S&apos;' />
+									<exp exp='AFF8 = &apos;E&apos;' />
+									<exp exp='AFF9 = &apos;P&apos;' />
+									<exp exp='AFF10 = &apos;T&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='OCTOBRE' exp='MOIS = 10' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = 0' />
+									<exp exp='AFF8 = &apos;O&apos;' />
+									<exp exp='AFF9 = &apos;C&apos;' />
+									<exp exp='AFF10 = &apos;T&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='NOVEMBRE' exp='MOIS = 11' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = 0' />
+									<exp exp='AFF8 = &apos;N&apos;' />
+									<exp exp='AFF9 = &apos;O&apos;' />
+									<exp exp='AFF10 = &apos;V&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+						<command class_type='decision' title='DECEMBRE' exp='MOIS = 12' swap='0' >
+							<flowline >
+								<command class_type='calculation' title='Calcul' >
+									<exp exp='AFF7 = 0' />
+									<exp exp='AFF8 = &apos;D&apos;' />
+									<exp exp='AFF9 = &apos;E&apos;' />
+									<exp exp='AFF10 = &apos;C&apos;' />
+								</command>
+							</flowline>
+							<flowline />
+						</command>
+					</flowline>
+				</macro>
+				<macro >
+					<flowline name='INTERRUPT_PORTB' description='' />
+				</macro>
+				<macro >
+					<flowline name='REGLAGE' description='' >
+						<command class_type='input' title='BP mode' mode='2' port='1048576' mask='1' exp='BP_MODE' />
+						<command class_type='input' title='BP plus' mode='1' port='1048576' mask='4' exp='BP_PLUS' />
+						<command class_type='input' title='BP moins' mode='1' port='1048576' mask='2' exp='BP_MOINS' />
+						<command class_type='decision' title='' exp='BP_MODE = 1' swap='0' >
+							<flowline >
+								<command class_type='decision' title='Détection front montant' exp='BP_MODEM = 0' swap='0' >
+									<flowline >
+										<command class_type='calculation' title='Mise à 1 mémoire et +1' >
+											<exp exp='BP_MODEM = 1' />
+											<exp exp='MODE = MODE + 1' />
+										</command>
+										<command class_type='decision' title='' exp='MODE = 4' swap='0' >
+											<flowline >
+												<command class_type='calculation' title='' >
+													<exp exp='MODE = 0' />
+												</command>
+											</flowline>
+											<flowline />
+										</command>
+									</flowline>
+									<flowline />
+								</command>
+							</flowline>
+							<flowline >
+								<command class_type='calculation' title='Mise à 0 mémoire' >
+									<exp exp='BP_MODEM = 0' />
+								</command>
+							</flowline>
+						</command>
+						<command class_type='decision' title='' exp='BP_PLUS = 1' swap='0' >
+							<flowline >
+								<command class_type='decision' title='Détection front montant' exp='BP_PLUSM = 0' swap='0' >
+									<flowline >
+										<command class_type='calculation' title='Mise à 1 mémoire ' >
+											<exp exp='BP_PLUSM = 1' />
+										</command>
+										<command class_type='decision' title='Condition' exp='MODE = 0' swap='0' >
+											<flowline >
+												<command class_type='calculation' title='' >
+													<exp exp='MIN = MIN + 1' />
+												</command>
+												<command class_type='decision' title='' exp='MIN = 60' swap='0' >
+													<flowline >
+														<command class_type='calculation' title='Calcul' >
+															<exp exp='MIN = 0' />
+														</command>
+													</flowline>
+													<flowline />
+												</command>
+											</flowline>
+											<flowline />
+										</command>
+										<command class_type='decision' title='' exp='MODE = 1' swap='0' >
+											<flowline >
+												<command class_type='calculation' title='' >
+													<exp exp='H = H + 1' />
+												</command>
+												<command class_type='decision' title='Condition' exp='H = 24' swap='0' >
+													<flowline >
+														<command class_type='calculation' title='Calcul' >
+															<exp exp='H = 0' />
+														</command>
+													</flowline>
+													<flowline />
+												</command>
+											</flowline>
+											<flowline />
+										</command>
+										<command class_type='decision' title='' exp='MODE = 2' swap='0' >
+											<flowline >
+												<command class_type='calculation' title='' >
+													<exp exp='JR = JR + 1' />
+												</command>
+												<command class_type='decision' title='Condition' exp='JR = 32' swap='0' >
+													<flowline >
+														<command class_type='calculation' title='Calcul' >
+															<exp exp='JR = 0' />
+														</command>
+													</flowline>
+													<flowline />
+												</command>
+											</flowline>
+											<flowline />
+										</command>
+										<command class_type='decision' title='' exp='MODE = 3' swap='0' >
+											<flowline >
+												<command class_type='calculation' title='' >
+													<exp exp='MOIS = MOIS + 1' />
+												</command>
+												<command class_type='decision' title='Condition' exp='MOIS = 13' swap='0' >
+													<flowline >
+														<command class_type='calculation' title='Calcul' >
+															<exp exp='MOIS = 0' />
+														</command>
+													</flowline>
+													<flowline />
+												</command>
+											</flowline>
+											<flowline />
+										</command>
+									</flowline>
+									<flowline />
+								</command>
+							</flowline>
+							<flowline >
+								<command class_type='calculation' title='Mise à 0 mémoire' >
+									<exp exp='BP_PLUSM = 0' />
+								</command>
+							</flowline>
+						</command>
+						<command class_type='decision' title='' exp='BP_MOINS = 1' swap='0' >
+							<flowline >
+								<command class_type='decision' title='Détection front montant' exp='BP_MOINSM = 0' swap='0' >
+									<flowline >
+										<command class_type='calculation' title='Mise à 1 mémoire' >
+											<exp exp='BP_MOINSM = 1' />
+										</command>
+										<command class_type='decision' title='Condition' exp='MODE = 0' swap='0' >
+											<flowline >
+												<command class_type='calculation' title='' >
+													<exp exp='MIN = MIN - 1' />
+												</command>
+												<command class_type='decision' title='' exp='MIN = 255' swap='0' >
+													<flowline >
+														<command class_type='calculation' title='Calcul' >
+															<exp exp='MIN = 59' />
+														</command>
+													</flowline>
+													<flowline />
+												</command>
+											</flowline>
+											<flowline />
+										</command>
+										<command class_type='decision' title='' exp='MODE = 1' swap='0' >
+											<flowline >
+												<command class_type='calculation' title='' >
+													<exp exp='H = H - 1' />
+												</command>
+												<command class_type='decision' title='Condition' exp='H = 255' swap='0' >
+													<flowline >
+														<command class_type='calculation' title='Calcul' >
+															<exp exp='H = 23' />
+														</command>
+													</flowline>
+													<flowline />
+												</command>
+											</flowline>
+											<flowline />
+										</command>
+										<command class_type='decision' title='' exp='MODE = 2' swap='0' >
+											<flowline >
+												<command class_type='calculation' title='' >
+													<exp exp='JR = JR - 1' />
+												</command>
+												<command class_type='decision' title='Condition' exp='JR = 255' swap='0' >
+													<flowline >
+														<command class_type='calculation' title='Calcul' >
+															<exp exp='JR = 31' />
+														</command>
+													</flowline>
+													<flowline />
+												</command>
+											</flowline>
+											<flowline />
+										</command>
+										<command class_type='decision' title='' exp='MODE = 3' swap='0' >
+											<flowline >
+												<command class_type='calculation' title='' >
+													<exp exp='MOIS = MOIS - 1' />
+												</command>
+												<command class_type='decision' title='Condition' exp='MOIS = 255' swap='0' >
+													<flowline >
+														<command class_type='calculation' title='Calcul' >
+															<exp exp='MOIS = 12' />
+														</command>
+													</flowline>
+													<flowline />
+												</command>
+											</flowline>
+											<flowline />
+										</command>
+									</flowline>
+									<flowline />
+								</command>
+							</flowline>
+							<flowline >
+								<command class_type='calculation' title='Mise à 0 mémoire' >
+									<exp exp='BP_MOINSM = 0' />
+								</command>
+							</flowline>
+						</command>
+					</flowline>
+				</macro>
+				<macro >
+					<flowline name='ENVOI_DONNEES_AFFICHEURS' description='' >
+						<command class_type='native' title='Start code = 255' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;255&apos;        ;charger 255
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Adresse afficheur  1' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;1&apos;          ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='code ASCII afficheur 1' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+
+movf _FCV_AFF1,W    ;charger code
+movwf TXREG         ;dans TXREG
+}
+
+' language='C' />
+						<command class_type='native' title='Start code = 255' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;255&apos;        ;charger 255
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Adresse afficheur  2' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;2&apos;          ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='code ASCII afficheur 2' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+
+movf _FCV_AFF2,W    ;charger code
+movwf TXREG         ;dans TXREG
+}
+
+' language='C' />
+						<command class_type='native' title='Start code = 255' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;255&apos;        ;charger 255
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Adresse afficheur  3' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;3&apos;          ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='code ASCII afficheur 3' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+
+movf _FCV_AFF3,W    ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Start code = 255' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;255&apos;        ;charger 255
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Adresse afficheur  4' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;4&apos;          ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='code ASCII afficheur 4' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+
+movf _FCV_AFF4,W    ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Start code = 255' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;255&apos;        ;charger 255
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Adresse afficheur  5' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;5&apos;          ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='code ASCII afficheur 5' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+
+movf _FCV_AFF5,W    ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Start code = 255' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;255&apos;        ;charger 255
+movwf TXREG         ;dans TXREG
+
+}' language='C' />
+						<command class_type='native' title='Adresse afficheur  6' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;6&apos;          ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='code ASCII afficheur 6' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+
+movf _FCV_AFF6,W    ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Start code = 255' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;255&apos;        ;charger 255
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Adresse afficheur  7' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;7&apos;          ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='code ASCII afficheur 7' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+
+movf _FCV_AFF7,W    ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Start code = 255' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;255&apos;        ;charger 255
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Adresse afficheur  8' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;8&apos;          ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='code ASCII afficheur 8' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+
+movf _FCV_AFF8,W    ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Start code = 255' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;255&apos;        ;charger 255
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Adresse afficheur  9' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;9&apos;          ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='code ASCII afficheur 9' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+
+movf _FCV_AFF9,W    ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Start code = 255' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;255&apos;        ;charger 255
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='Adresse afficheur  10' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+movlw d&apos;10&apos;          ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+						<command class_type='native' title='code ASCII afficheur 10' ccode='
+asm
+{
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+
+
+btfss PIR1,TXIF     ;si TXIF=1 on saute l&apos;instruction goto 
+goto $-1            ;sinon on attend
+
+
+movf _FCV_AFF10,W    ;charger code
+movwf TXREG         ;dans TXREG
+}' language='C' />
+					</flowline>
+				</macro>
+				<macro >
+					<flowline name='INTERRUPT_RB0INT' description='' />
+				</macro>
+				<macro >
+					<flowline name='Main' description='' >
+						<command class_type='delay' title='Mise sous tension' exp='5' type='2' />
+						<command class_type='native' title='Initialisation RS232' ccode='
+asm
+{
+bsf    STATUS,RP0   ;selection bank 1
+bcf    STATUS,RP1
+
+movlw  d&apos;20&apos;
+movwf  SPBRG        ;initialise SPBRG
+
+movlw  B&apos;00100100&apos;
+movwf  TXSTA        ;initialise TXSTA
+
+bcf    STATUS,RP0   ;selection bank 0
+bcf    STATUS,RP1
+
+movlw  B&apos;10000000&apos;
+movwf  RCSTA        ;initialise RCSTA
+}
+
+' language='C' />
+						<command class_type='calculation' title='Remises à zéro' >
+							<exp exp='MODE = 0' />
+							<exp exp='SEC = 0' />
+							<exp exp='MIN = 0' />
+							<exp exp='H = 12' />
+							<exp exp='JR = 12' />
+							<exp exp='MOIS = 6' />
+						</command>
+						<command class_type='output' title='reset registres' mode='2' port='1048577' mask='32' exp='0' />
+						<command class_type='output' title='pas de reset registres' mode='2' port='1048577' mask='32' exp='32' />
+						<command class_type='output' title='on allume tout' mode='2' port='1048577' mask='4' exp='4' />
+						<command class_type='output' title='clock registres' mode='2' port='1048577' mask='16' exp='0' />
+						<command class_type='output' title='front montant sur clock registres' mode='2' port='1048577' mask='16' exp='16' />
+						<command class_type='loop' title='Boucle' type='0' exp='1' >
+							<flowline >
+								<command class_type='input' title='commutateur mode' mode='2' port='1048577' mask='192' exp='MODE_FONCTIONNEMENT' />
+								<command class_type='decision' title='Réglage' exp='MODE_FONCTIONNEMENT = 128' swap='0' >
+									<flowline >
+										<command class_type='interrupt' title='Interruption' enable='0' name='TMR0' >
+											<settings timer='1' prescale='128' postscale='-1' rollover='-1' bitcount='-1' trigger='3' maskhi='--------------------------------------------------------------------------------------------------------------------------------------------------------------------------8' masklo='--------------------------------------------------------------------------------------------------------------------------------------------------------------------------8' >
+												<option value='1' />
+												<option value='0' />
+												<option value='7' />
+												<option value='0' />
+											</settings>
+										</command>
+										<command class_type='call' title='Appel d&apos;une Macro' macro='REGLAGE' />
+									</flowline>
+									<flowline />
+								</command>
+								<command class_type='decision' title='Arret' exp='MODE_FONCTIONNEMENT = 0' swap='0' >
+									<flowline >
+										<command class_type='interrupt' title='Interruption' enable='0' name='TMR0' >
+											<settings timer='1' prescale='128' postscale='-1' rollover='-1' bitcount='0' trigger='3' maskhi='--------------------------------------------------------------------------------------------------------------------------------------------------------------------------8' masklo='--------------------------------------------------------------------------------------------------------------------------------------------------------------------------8' >
+												<option value='1' />
+												<option value='0' />
+												<option value='7' />
+												<option value='0' />
+											</settings>
+										</command>
+									</flowline>
+									<flowline />
+								</command>
+								<command class_type='decision' title='Normal' exp='MODE_FONCTIONNEMENT = 64' swap='0' >
+									<flowline >
+										<command class_type='interrupt' title='Interruption' enable='1' name='TMR0' call='INTERRUPT_TMR0' >
+											<settings timer='1' prescale='128' postscale='-1' rollover='-1' bitcount='0' trigger='3' maskhi='--------------------------------------------------------------------------------------------------------------------------------------------------------------------------8' masklo='--------------------------------------------------------------------------------------------------------------------------------------------------------------------------8' >
+												<option value='1' />
+												<option value='0' />
+												<option value='7' />
+												<option value='0' />
+											</settings>
+										</command>
+									</flowline>
+									<flowline />
+								</command>
+								<command class_type='calculation' title='données heure minute jours' >
+									<exp exp='AFF1 = 48 + (H / 10)' />
+									<exp exp='AFF2 = 48 + (H MOD 10)' />
+									<exp exp='AFF3 = 48 + (MIN / 10)' />
+									<exp exp='AFF4 = 48 + (MIN MOD 10)' />
+									<exp exp='AFF5 = 48 + (JR / 10)' />
+									<exp exp='AFF6 = 48 + (JR MOD 10)' />
+								</command>
+								<command class_type='call' title='' macro='DONNEES_MOIS' />
+								<command class_type='call' title='' macro='ENVOI_DONNEES_AFFICHEURS' />
+							</flowline>
+						</command>
+					</flowline>
+				</macro>
+			</macros>
+		</component>
+	</components>
+	<keymap />
+	<panel2d shadows='0' lighting='2' brightness='0' perspective='0' >
+		<background rgb='9737364' img='' style='0' />
+		<camera xe='0' ye='0' ze='300' xt='0' yt='0' zt='0' xquat='0' yquat='0' zquat='0' wquat='1' />
+	</panel2d>
+	<panel3d shadows='0' lighting='2' brightness='0' perspective='0' >
+		<background rgb='8409120' img='' style='0' />
+		<table rgb='7360576' img='' style='0' size='25' />
+		<camera xe='0' ye='0' ze='300' xt='0' yt='0' zt='0' xquat='0' yquat='0' zquat='0' wquat='1' />
+	</panel3d>
+	<layout >
+		<view type='0' name='Main' mode='0' placement='LAAAAAAAAAABAAAA---------------------wAAAAAUAAAAZwQAAJQDAAA' zoom='75' scrollx='0' scrolly='0' flags='0' />
+	</layout>
+</document>
+</root>
