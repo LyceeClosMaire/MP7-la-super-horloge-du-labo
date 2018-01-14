@@ -4,8 +4,15 @@ from tkinter.messagebox import *
 def a():
     showwarning('Inaccessible :(')
 
-def ch_heure():
+def removecontent(fenetre):
+    i = 0
+    for child in fenetre.winfo_children():
+        if i > 1:
+            child.destroy()
+        i += 1
 
+def ch_heure(fenetre):
+    removecontent(fenetre)
     Frame_ch_heure = Frame(fenetre)
     Frame_ch_heure.pack()
 
@@ -33,7 +40,8 @@ def ch_heure():
     bouton=Button(fenetre, pady=6, text="Enregistrer", command=a)
     bouton.pack()
 
-def ch_date():
+def ch_date(fenetre):
+    removecontent(fenetre)
 
     Frame_ch_date = Frame(fenetre)
     Frame_ch_date.pack()
@@ -62,7 +70,8 @@ def ch_date():
     bouton=Button(fenetre, pady=6, text="Enregistrer", command=a)
     bouton.pack()
 
-def aff():
+def aff(fenetre):
+    removecontent(fenetre)
 
     phrase = StringVar()
     phrase.set("texte par défaut")
@@ -85,9 +94,9 @@ def load_dashboardwindows(fenetre):
     menubar = Menu(fenetre)
 
     menu1 = Menu(menubar, tearoff=0)
-    menu1.add_command(label="Changer la date", command=ch_date)
-    menu1.add_command(label="Changer l'heure", command=ch_heure)
-    menu1.add_command(label="Afficher une phrase", command=aff)
+    menu1.add_command(label="Changer la date", command= lambda: ch_date(fenetre))
+    menu1.add_command(label="Changer l'heure", command= lambda: ch_heure(fenetre))
+    menu1.add_command(label="Afficher une phrase", command= lambda: aff(fenetre))
     menu1.add_separator()
     menu1.add_command(label="Relancer", command=a)
     menubar.add_cascade(label="Parametres", menu=menu1)
@@ -102,5 +111,3 @@ def load_dashboardwindows(fenetre):
     menu3.add_command(label="Fermer la fenêtre", command=fenetre.quit)
     menubar.add_cascade(label="Quitter", menu=menu3)
     fenetre.config(menu=menubar)
-
-##fenetre.mainloop()

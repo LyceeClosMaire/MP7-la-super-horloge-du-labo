@@ -4,8 +4,7 @@ from ProjetISN_menu import *
 
 def verif_mdp():
     if mdp.get() == '<3':
-        for c in fenetre.winfo_children():
-            c.destroy()
+        removecontent(fenetre)
         load_dashboardwindows(fenetre)
     else:
         showwarning('Résultat','Mot de passe incorrect.')
