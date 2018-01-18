@@ -3,8 +3,7 @@ from tkinter.messagebox import *
 from ProjetISN_menu import *
 
 def verif_mdp():
-    if mdp.get() == '<3':
-        removecontent(fenetre)
+    if mdp.get() == '':
         load_dashboardwindows(fenetre)
     else:
         showwarning('Résultat','Mot de passe incorrect.')

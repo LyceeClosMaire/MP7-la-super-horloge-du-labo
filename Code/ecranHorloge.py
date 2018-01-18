@@ -1,13 +1,29 @@
 ﻿from tkinter import *
 from time import *
+from math import *
 
-format = False
+cptMs = 0.0
+##Objects
+aigSec = False
+affHeu = False
+Canevas = False
+Fenetre = False
 
-def horloge():
+def animeAigSec():
+    global aigSec
+    global affHeu
+    global cptMs
+    global Canevas
+    global Fenetre
+    cptMs += 0.24
+    rad = radians(cptMs)
+    posX = cos(rad) * 230 + 640
+    posY = sin(rad) * 230 + 300
+    Canevas.coords(aigSec, 640, 300, posX, posY)
     current = localtime()
     sortie = convertdate(current)
-    Label1["text"] = sortie
-    Label1.after(1000, horloge)
+    Canevas.itemconfig(affHeu, text=sortie)
+    Canevas.after(40, animeAigSec)
 
 def convertdate(current):
     annee = str(current[0])
@@ -21,14 +37,7 @@ def convertdate(current):
         secondes = '0' + secondes
     if current[4] < 10:
         minutes = '0' + minutes
-    global Format
-    if format == True:
-        if current[3] < 12:
-            heure = 'AM ' + heure
-        else:
-            heure = 'PM ' + str(current[3] - 12)
-    else:
-        if current[3] < 10:
+    if current[3] < 10:
             heure = '0' + heure
     if current[6] == 0:
         jour = "Lundi"
@@ -39,7 +48,7 @@ def convertdate(current):
     elif current[6] == 3:
         jour = "Jeudi"
     elif current[6] == 4:
-        jour = "Vendredii"
+        jour = "Vendredi"
     elif current[6] == 5:
         jour = "Samedi"
     elif current[6] == 6:
@@ -72,34 +81,22 @@ def convertdate(current):
     sortie = heure + ':' + minutes + ':' + secondes + '\n' + jour + ' ' + journ + ' ' + mois + ' ' + annee
     return sortie
 
-def format():
-    global format
-    if format == True:
-        format = False
-    else:
-        format = True
+def Horloge():
+    global Fenetre
+    global Canevas
+    global aigSec
+    global affHeu
+    Fenetre = Tk()
 
-Mafenetre = Tk()
-Label1 = Label(Mafenetre, text="Horloge numérique", bg="black", fg="white", width="500", height="200", font="Ubuntu 100")
-Label1.pack()
-menubar = Menu(Mafenetre)
+    Canevas = Canvas(Fenetre, width=1280, height=1024, bg ='black')
+    Canevas.pack(padx=0, pady=0)
+    Canevas.create_oval(390, 50, 890, 550, outline='white', width="5", fill='black')
+    Canevas.create_line(640, 300, 840, 300, fill="white", width="5")
+    Canevas.create_line(640, 300, 640, 200, fill="white", width="10")
+    aigSec = Canevas.create_line(640, 300, 640, 530, fill="red", width="2")
+    affHeu = Canevas.create_text(700, 600, fill="white")
 
-#c = Canvas(Mafenetre,)
-#c.pack()
-#fond = PhotoImage(file="background1.jpg")
-#c.create_image(0, 0, image=fond)
-#root = Tk()
-#image = PhotoImage(file='background1.jpg', master=root)
-#canvas = Canvas(root, width=500, height=500)
-#canvas.pack()
+    Canevas.create_oval(630, 290, 650, 310, outline='white', width="5", fill='white')
 
-#canvas.create_image((w//2, h//2), image=image)
-
-menu1 = Menu(menubar, tearoff=0)
-menu1.add_command(label="AM/PM", command=format)
-menubar.add_cascade(label="Format", menu=menu1)
-
-Mafenetre.config(menu=menubar)
-
-horloge()
-Mafenetre.mainloop()
+    animeAigSec()
+    Fenetre.mainloop()

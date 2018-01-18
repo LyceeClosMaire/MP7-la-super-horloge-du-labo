@@ -1,77 +1,103 @@
 ﻿from tkinter import*
 from tkinter.messagebox import *
 
+menubar = False
+fenetre = False
+
 def a():
     showwarning('Inaccessible :(')
 
-def removecontent(fenetre):
+def removecontent():
     i = 0
+    global fenetre
+    global menubar
     for child in fenetre.winfo_children():
-        if i > 1:
+        if child != menubar:
             child.destroy()
         i += 1
 
-def ch_heure(fenetre):
-    removecontent(fenetre)
-    Frame_ch_heure = Frame(fenetre)
-    Frame_ch_heure.pack()
+def changer_date():
 
-    l_heure = LabelFrame(Frame_ch_heure, text="Heures", padx=20, pady=20)
-    l_heure.pack(side=LEFT, padx=3)
+    global fenetre
+    removecontent()
 
-    l_min = LabelFrame(Frame_ch_heure, text="Minutes", padx=20, pady=20)
-    l_min.pack(side=LEFT, padx=3)
+    Frame_chdate = Frame(fenetre)
+    Frame_chdate.pack(pady=5, padx=15)
 
-    l_sec = LabelFrame(Frame_ch_heure, text="Secondes", padx=20, pady=20)
-    l_sec.pack(side=LEFT, padx=3)
+    Frame_jour = Frame(Frame_chdate, width=45, bg="grey")
+    Frame_jour.pack(pady=5)
 
-    _heure = DoubleVar()
-    scale = Scale(l_heure, variable=_heure, from_=0, to=24)
-    scale.pack(side=LEFT)
+    Frame_mois = Frame(Frame_chdate, width=45, bg="grey")
+    Frame_mois.pack(pady=5)
 
-    _min = DoubleVar()
-    scale = Scale(l_min, variable=_min, from_=0, to=59)
-    scale.pack(side=LEFT)
+    Frame_annee = Frame(Frame_chdate, width=45, bg="grey")
+    Frame_annee.pack(pady=5)
 
-    _sec = DoubleVar()
-    scale = Scale(l_sec, variable=_sec, from_=0, to=59)
-    scale.pack(side=LEFT)
+    label_jour = Label(Frame_jour, text="Jour", bg="grey")
+    label_jour.pack(side=LEFT, padx=30)
 
-    bouton=Button(fenetre, pady=6, text="Enregistrer", command=a)
-    bouton.pack()
+    _jour = Spinbox(Frame_jour, from_=0, to=23, width=8)
+    _jour.pack(side=RIGHT)
 
-def ch_date(fenetre):
-    removecontent(fenetre)
+    label_mois = Label(Frame_mois, text="Mois", bg="grey")
+    label_mois.pack(side=LEFT, padx=28)
 
-    Frame_ch_date = Frame(fenetre)
-    Frame_ch_date.pack()
+    _mois = Spinbox(Frame_mois, from_=0, to=59, width=8)
+    _mois.pack(side=RIGHT)
 
-    l_mois = LabelFrame(Frame_ch_date, text="Mois", padx=20, pady=20)
-    l_mois.pack(side=LEFT, padx=3)
+    label_annee = Label(Frame_annee, text="Année", bg="grey")
+    label_annee.pack(side=LEFT, padx=24)
 
-    l_jour = LabelFrame(Frame_ch_date, text="Jour", padx=20, pady=20)
-    l_jour.pack(side=LEFT, padx=3)
-
-    l_annee = LabelFrame(Frame_ch_date, text="Année", padx=20, pady=20)
-    l_annee.pack(side=LEFT, padx=3)
-
-    _mois = DoubleVar()
-    scale = Scale(l_mois, variable=_mois, from_=1, to=12)
-    scale.pack(side=LEFT)
-
-    _jour = DoubleVar()
-    scale = Scale(l_jour, variable=_jour, from_=1, to=31)
-    scale.pack(side=LEFT)
-
-    _annee = DoubleVar()
-    scale = Scale(l_annee, variable=_annee, from_=18, to=58)
-    scale.pack(side=LEFT)
+    _annee = Spinbox(Frame_annee, from_=0, to=59, width=8)
+    _annee.pack(side=RIGHT)
 
     bouton=Button(fenetre, pady=6, text="Enregistrer", command=a)
     bouton.pack()
 
-def aff(fenetre):
-    removecontent(fenetre)
+def changer_heure():
+
+    global fenetre
+    removecontent()
+
+    Frame_chheure = Frame(fenetre)
+    Frame_chheure.pack(pady=5, padx=15)
+
+    Frame_heure = Frame(Frame_chheure, width=45, bg="grey")
+    Frame_heure.pack(pady=5)
+
+    Frame_min = Frame(Frame_chheure, width=45, bg="grey")
+    Frame_min.pack(pady=5)
+
+    Frame_sec = Frame(Frame_chheure, width=45, bg="grey")
+    Frame_sec.pack(pady=5)
+
+    label_heure = Label(Frame_heure, text="Heures", bg="grey")
+    label_heure.pack(side=LEFT, padx=22)
+
+    _heure = Spinbox(Frame_heure, from_=0, to=23, width=8)
+    _heure.pack(side=RIGHT)
+
+    label_min = Label(Frame_min, text="Minutes", bg="grey")
+    label_min.pack(side=LEFT, padx=19)
+
+    _min = Spinbox(Frame_min, from_=0, to=59, width=8)
+    _min.pack(side=RIGHT)
+
+    label_sec = Label(Frame_sec, text="Secondes", bg="grey")
+    label_sec.pack(side=LEFT, padx=15)
+
+    _sec = Spinbox(Frame_sec, from_=0, to=59, width=8)
+    _sec.pack(side=RIGHT)
+
+    bouton=Button(fenetre, pady=6, text="Enregistrer", command=a)
+    bouton.pack()
+
+
+
+def aff():
+
+    global fenetre
+    removecontent()
 
     phrase = StringVar()
     phrase.set("texte par défaut")
@@ -88,22 +114,27 @@ def aff(fenetre):
     bouton=Button(fenetre, pady=6, text="Enregistrer", command=a)
     bouton.pack()
 
-def load_dashboardwindows(fenetre):
-    fenetre.title('Horloge')
+def load_dashboardwindows(window):
 
+    global menubar
+    global fenetre
+
+    fenetre = window
+
+    removecontent()
+    fenetre.title('Horloge')
     menubar = Menu(fenetre)
 
     menu1 = Menu(menubar, tearoff=0)
-    menu1.add_command(label="Changer la date", command= lambda: ch_date(fenetre))
-    menu1.add_command(label="Changer l'heure", command= lambda: ch_heure(fenetre))
-    menu1.add_command(label="Afficher une phrase", command= lambda: aff(fenetre))
+    menu1.add_command(label="Changer la date", command=changer_date)
+    menu1.add_command(label="Changer l'heure", command=changer_heure)
+    menu1.add_command(label="Afficher une phrase", command=aff)
     menu1.add_separator()
     menu1.add_command(label="Relancer", command=a)
     menubar.add_cascade(label="Parametres", menu=menu1)
 
     menu2 = Menu(menubar, tearoff=0)
-    menu2.add_command(label="A propos", command=a)
-    menu2.add_command(label="Fiche explicative", command=a)
+    menu2.add_command(label="Informations", command=a)
 
     menubar.add_cascade(label="Aide", menu=menu2)
 
