@@ -2,28 +2,69 @@
 from time import *
 from math import *
 
-cptMs = 0.0
+cptAs = -90.0
+cptTs = 0
+cptAm = -90.0
+cptTm = 0
 ##Objects
 aigSec = False
+aigMin = False
+aigHeu = False
 affHeu = False
+affTIn = False
+affTEx = False
 Canevas = False
 Fenetre = False
 
 def animeAigSec():
     global aigSec
-    global affHeu
-    global cptMs
+    global cptAs
+    global cptTs
     global Canevas
-    global Fenetre
-    cptMs += 0.24
-    rad = radians(cptMs)
+
+    cptAs += 0.24
+    rad = radians(cptAs)
     posX = cos(rad) * 230 + 640
     posY = sin(rad) * 230 + 300
     Canevas.coords(aigSec, 640, 300, posX, posY)
+    cptTs +=1
+    if cptTs < 1500:
+        Canevas.after(40, animeAigSec)
+    else:
+        cptAs = -90.0
+        cptTs = 0
+
+def animeAigMin():
+    global aigMin
+    global cptAm
+    global cptTm
+    global Canevas
+
+    cptAm += 0.05
+    rad = radians(cptAm)
+    posX = cos(rad) * 230 + 640
+    posY = sin(rad) * 230 + 300
+    Canevas.coords(aigMin, 640, 300, posX, posY)
+    if cptTm < 7200:
+        if cptTm % 120 == 0:
+            animeAigSec()
+        animeTexHeu()
+        Canevas.after(500, animeAigMin)
+    else:
+        cptAm = -90.0
+    cptTm += 1
+
+def animeTexHeu():
+    global affHeu
+    global affTIn
+    global affTEx
+    global Canevas
+
     current = localtime()
-    sortie = convertdate(current)
-    Canevas.itemconfig(affHeu, text=sortie)
-    Canevas.after(40, animeAigSec)
+    heure = convertdate(current)
+    Canevas.itemconfig(affHeu, text=heure)
+    Canevas.itemconfig(affTIn, text="27.5")
+    Canevas.itemconfig(affTEx, text="13°c")
 
 def convertdate(current):
     annee = str(current[0])
@@ -81,22 +122,51 @@ def convertdate(current):
     sortie = heure + ':' + minutes + ':' + secondes + '\n' + jour + ' ' + journ + ' ' + mois + ' ' + annee
     return sortie
 
-def Horloge():
+def createHorloge():
     global Fenetre
     global Canevas
     global aigSec
+    global aigMin
+    global aigHeu
     global affHeu
+    global affTEx
+    global affTIn
+
     Fenetre = Tk()
 
     Canevas = Canvas(Fenetre, width=1280, height=1024, bg ='black')
     Canevas.pack(padx=0, pady=0)
-    Canevas.create_oval(390, 50, 890, 550, outline='white', width="5", fill='black')
-    Canevas.create_line(640, 300, 840, 300, fill="white", width="5")
-    Canevas.create_line(640, 300, 640, 200, fill="white", width="10")
-    aigSec = Canevas.create_line(640, 300, 640, 530, fill="red", width="2")
-    affHeu = Canevas.create_text(700, 600, fill="white")
+    Canevas.create_oval(390, 50, 890, 550, outline="white", fill="white", width="5")
 
-    Canevas.create_oval(630, 290, 650, 310, outline='white', width="5", fill='white')
+    Canevas.create_line(640, 30, 640, 70, fill="black", width="3")
+    Canevas.create_line(755, 101, 775, 67, fill="black", width="3")
+    Canevas.create_line(839, 185, 873, 165, fill="black", width="3")
+    Canevas.create_line(370, 300, 410, 300, fill="black", width="3")
+    Canevas.create_line(839, 415, 873, 435, fill="black", width="3")
+    Canevas.create_line(755, 499, 775, 533, fill="black", width="3")
+    Canevas.create_line(640, 570, 640, 530, fill="black", width="3")
+    Canevas.create_line(441, 415, 407, 435, fill="black", width="3")
+    Canevas.create_line(525, 499, 505, 533, fill="black", width="3")
+    Canevas.create_line(870, 300, 910, 300, fill="black", width="3")
+    Canevas.create_line(441, 185, 407, 165, fill="black", width="3")
+    Canevas.create_line(525, 101, 505, 67, fill="black", width="3")
 
-    animeAigSec()
+    aigMin = Canevas.create_line(640, 300, 840, 300, fill="black", width="5")
+    aigHeu = Canevas.create_line(640, 300, 640, 150, fill="black", width="8")
+    aigSec = Canevas.create_line(640, 300, 640, 300, fill="red", width="2")
+    Canevas.create_text(195, 250, fill="white", font="Montserrat 35", width="400", justify="center", text="INTERIEURE")
+    Canevas.create_text(1085, 250, fill="white", font="Montserrat 35", width="400", justify="center", text="EXTERIEURE")
+    affHeu = Canevas.create_text(640, 680, fill="white", font="Montserrat 60", width="1000", justify="center")
+    affTIn = Canevas.create_text(195, 350, fill="white", font="Montserrat 120", width="400", justify="center")
+    affTEx = Canevas.create_text(1085, 350, fill="white", font="Montserrat 120", width="400", justify="center")
+    Canevas.create_oval(630, 290, 650, 310, outline="black", width="5", fill="black")
+
+def Horloge():
+    global Fenetre
+
+    createHorloge()
+    animeAigMin()
+
     Fenetre.mainloop()
+
+Horloge()
