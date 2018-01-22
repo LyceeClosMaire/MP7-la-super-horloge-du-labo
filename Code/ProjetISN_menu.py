@@ -1,12 +1,15 @@
 ﻿from tkinter import*
 from tkinter.messagebox import *
+import socket
 
 menubar = False
 fenetre = False
 
+socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 def a():
     showwarning('Inaccessible :(')
-
+    
 def removecontent():
     i = 0
     global fenetre
@@ -16,8 +19,17 @@ def removecontent():
             child.destroy()
         i += 1
 
-def changer_date():
+def envoyer_date(anne, mois, jour):
+    showwarning('changer date')
+    
+def envoyer_heure(heure, minute, seconde):
+    showwarning('Evoyer l''heure')
+    
+def envoyer_message(message, couleur):
+    showwarning('evoyer message')
+    
 
+def changer_date():
     global fenetre
     removecontent()
 
@@ -48,10 +60,10 @@ def changer_date():
     label_annee = Label(Frame_annee, text="Année", bg="grey")
     label_annee.pack(side=LEFT, padx=24)
 
-    _annee = Spinbox(Frame_annee, from_=0, to=59, width=8)
+    _annee = Spinbox(Frame_annee, from_=2000, to=3000, width=8)
     _annee.pack(side=RIGHT)
 
-    bouton=Button(fenetre, pady=6, text="Enregistrer", command=a)
+    bouton=Button(fenetre, pady=6, text="Enregistrer", command= lambda: envoyer_date(int(_annee.get()), int(_mois.get()), int(_jour.get())))
     bouton.pack()
 
 def changer_heure():
@@ -89,12 +101,12 @@ def changer_heure():
     _sec = Spinbox(Frame_sec, from_=0, to=59, width=8)
     _sec.pack(side=RIGHT)
 
-    bouton=Button(fenetre, pady=6, text="Enregistrer", command=a)
+    bouton=Button(fenetre, pady=6, text="Enregistrer", command= lambda: envoyer_heure(int(_heure.get()), int(_min.get()), int(_sec.get())))
     bouton.pack()
 
 
 
-def aff():
+def changer_message_ecran():
 
     global fenetre
     removecontent()
@@ -110,14 +122,16 @@ def aff():
     liste.insert(3, "Vert")
     liste.insert(4, "Bleu")
     liste.pack(pady=3)
-
-    bouton=Button(fenetre, pady=6, text="Enregistrer", command=a)
+    
+    bouton=Button(fenetre, pady=6, text="Enregistrer", command= lambda: envoyer_message(phrase.get(),liste.get()))
     bouton.pack()
 
 def load_dashboardwindows(window):
-
+    
     global menubar
     global fenetre
+    global socket
+    socket.connect(('localhost', 12800))
 
     fenetre = window
 
@@ -128,7 +142,7 @@ def load_dashboardwindows(window):
     menu1 = Menu(menubar, tearoff=0)
     menu1.add_command(label="Changer la date", command=changer_date)
     menu1.add_command(label="Changer l'heure", command=changer_heure)
-    menu1.add_command(label="Afficher une phrase", command=aff)
+    menu1.add_command(label="Afficher une phrase sur l'écrant", command=changer_message_ecran)
     menu1.add_separator()
     menu1.add_command(label="Relancer", command=a)
     menubar.add_cascade(label="Parametres", menu=menu1)
