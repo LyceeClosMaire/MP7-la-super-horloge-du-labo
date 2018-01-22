@@ -6,6 +6,8 @@ cptAs = -90.0
 cptTs = 0
 cptAm = -90.0
 cptTm = 0
+cptAh = -90.0
+cptTh = 0
 ##Objects
 aigSec = False
 aigMin = False
@@ -19,7 +21,6 @@ Fenetre = False
 def animeAigSec():
     global aigSec
     global cptAs
-    global cptTs
     global Canevas
 
     cptAs += 0.24
@@ -27,44 +28,42 @@ def animeAigSec():
     posX = cos(rad) * 230 + 640
     posY = sin(rad) * 230 + 300
     Canevas.coords(aigSec, 640, 300, posX, posY)
-    cptTs +=1
-    if cptTs < 1500:
-        Canevas.after(40, animeAigSec)
-    else:
-        cptAs = -90.0
-        cptTs = 0
 
 def animeAigMin():
     global aigMin
     global cptAm
-    global cptTm
     global Canevas
 
-    cptAm += 0.05
+    cptAm += 0.02
     rad = radians(cptAm)
     posX = cos(rad) * 230 + 640
     posY = sin(rad) * 230 + 300
     Canevas.coords(aigMin, 640, 300, posX, posY)
-    if cptTm < 7200:
-        if cptTm % 120 == 0:
-            animeAigSec()
-        animeTexHeu()
-        Canevas.after(500, animeAigMin)
-    else:
-        cptAm = -90.0
-    cptTm += 1
 
-def animeTexHeu():
+def animeAigHeu():
+    global aigHeu
+    global cptAh
+    global Canevas
+
+    cptAh += 0.25
+    rad = radians(cptAh)
+    posX = cos(rad) * 230 + 640
+    posY = sin(rad) * 230 + 300
+    Canevas.coords(aigHeu, 640, 300, posX, posY)
+
+def animeTexHeu(heure):
     global affHeu
     global affTIn
     global affTEx
     global Canevas
 
-    current = localtime()
-    heure = convertdate(current)
     Canevas.itemconfig(affHeu, text=heure)
     Canevas.itemconfig(affTIn, text="27.5")
     Canevas.itemconfig(affTEx, text="13°c")
+
+def gettime():
+    current = localtime()
+    return current
 
 def convertdate(current):
     annee = str(current[0])
@@ -161,12 +160,37 @@ def createHorloge():
     affTEx = Canevas.create_text(1085, 350, fill="white", font="Montserrat 120", width="400", justify="center")
     Canevas.create_oval(630, 290, 650, 310, outline="black", width="5", fill="black")
 
-def Horloge():
+    return Fenetre
+
+def horloge():
     global Fenetre
+    global Canevas
+    global cptTs
+    global cptTm
+    global cptTh
+    global cptAs
+    global cptAm
+    global cptAh
 
-    createHorloge()
-    animeAigMin()
+    heure = gettime()
 
-    Fenetre.mainloop()
+    if heure[5] == 0 or cptTs == 1500:
+        cptAs = -90.0
+        cptTs = 0
+    elif cptTs % 5 == 0:
+        cptTm =+ 1
+        animeAigMin()
+        animeTexHeu(convertdate(heure))
+    elif cptTm % 30 == 0:
+        cptTh =+ 1
+        animeAigHeu()
+    elif cptTm == 3600:
+        cptAm = -90.0
+        cptTm = 0
+    elif cptTh == 720:
+        cptAh = -90.0
+        cptTh = 0
 
-Horloge()
+    animeAigSec()
+    cptTs +=1
+    Canevas.after(39, horloge)
