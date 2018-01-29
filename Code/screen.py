@@ -5,6 +5,7 @@ from math import *
 
 c = 0
 inlineMess = ""
+message = ""
 ##Variables globales représentant des objets tkinter
 aigSec = False
 aigMin = False
@@ -65,7 +66,7 @@ def animeTexHeu(heure, temp):
     Canevas.itemconfig(affTIn, text=temp)
     Canevas.itemconfig(affTEx, text="13°c")
 
-def animeMessage():
+def animeMessage(ismessage="0"):
     ##On récupère les objets tkinter
     global Fenetre
     global Canevas
@@ -74,28 +75,29 @@ def animeMessage():
     global centre
     global affMess
     global inlineMess
+    global message
     ##On modifie petit à petit la taille des éléments
     Canevas.coords(background, 640 - 250 - (c*10), 300 - 250 - (c*10), 640 + 250 + (c*10), 300 + 250 + (c*10))
     Canevas.itemconfigure(centre, fill="white", outline="white")
     Canevas.coords(centre, 640 - 10 - (c*10), 300 - 10 - (c*10), 640 + 10 + (c*10), 300 + 10 + (c*10))
-    ##on incrémente le compteur
-    c += 1
-    message="test"
-    ##longueur du message
-    sizeMess = 60 + len(message)
-
+    ##Si premier appel à la fonction
+    if(ismessage != "0"):
+        message = ismessage
     ##Si le compteur inf à 60, on contine l'animation d'agrandissement du cercle
     if c < 60:
         Canevas.after(5, animeMessage())
     ##Sinon On affiche le message lettre par lettre à chaque tour
-    elif c < sizeMess:
+    elif c < 60 + len(message):
         i = int(c-600)
         inlineMess = inlineMess + message[i]
         Canevas.itemconfig(affMess, text=inlineMess)
         Canevas.after(100, animeMessage())
-    ##enfin on remet à zéro
+    ##enfin on remet à zéro et supprime le message après
     else:
         c = 0
+        Canevas.after(10000, removeMessage())
+    ##on incrémente le compteur
+    c += 1
 
 def removeMessage():
     ##On récupère les objets tkinter
