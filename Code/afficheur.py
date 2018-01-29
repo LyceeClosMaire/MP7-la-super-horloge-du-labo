@@ -67,9 +67,3 @@ class Afficheur:
             self.show = True
             
         self.afficher()
-
-aff = Afficheur("message de la mort     ", 0, 10)
-
-while(True):
-    time.sleep(0.01)
-    aff.render()
